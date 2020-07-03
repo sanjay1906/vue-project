@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vue Project</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Project</title>
 </head>
+
 <body>
-    <h1>vue project</h1>
-    <h1>hello there im sanju</h1>
+  <h1>vue project</h1>
+  <h1>hello there im sanju</h1>
+
+
+  <div id="app">
+    <todo-item v-for="item in todos" v-bind:todo="item" v-bind:key="item.id"></todo-item>
+    {{ hello }}
+    <span v-if="seen">Now you see me</span>
+    <ol>
+      <li v-for="the in todos">
+        {{ the.test}}
+      </li>
+    </ol>
+    <button v-on:click='callme'>the button</button>
+    <input v-model='hello' />
+    <img style="width: 300px;height: 300px;" v-bind:src="image" alt="" srcset="">
+    <div>
+      <p v-if="not">its here</p>
+      <p v-else>not here</p>
+    </div>
+    <p v-if="instock">in stock</p>
+    <p v-else>out of stock</p>
+    <p>{{value}}</p>
+    <ul v-for="detail in details" :key="detail.id">
+      <li @mouseover="update(detail.image)">{{detail.color}}</li>
+    </ul>
+
+  </div>
+
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="./vue.js"></script>
 </body>
+
 </html>
